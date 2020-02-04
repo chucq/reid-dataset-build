@@ -23,7 +23,7 @@ def save_result(src,result,aimroot,cam_name,frame_index,info_out):
         snapname = '%s_P%s_V%s_F%s.png'%(cam_name,person_id,imgindex,frame_index)
         info_out.write('%s,%s,%s,%s,%s\n'%(snapname,int(left),int(top),int(left+width),int(top+height)))
 
-        aimpath = os.path.join(aimdir,'%s.png'%(snapname))
+        aimpath = os.path.join(aimdir,snapname)
         cimg = srcimg[max(int(info[1]),0):int(info[1]+info[3])+1,max(int(info[0]),0):int(info[0]+info[2])+1]
         cv2.imwrite(aimpath,cimg)
 
